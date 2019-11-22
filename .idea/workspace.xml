@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef068fcd-60a4-4029-b084-f972eace9a6b" name="Default Changelist" comment="">
+    <list default="true" id="bbd3f495-703d-4c28-bc9c-7341a913ef46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/annonce/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/annonce/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FormationSymf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FormationSymf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/annonce/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,15 +147,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1TwHYvsoc3DkBj64YWyPmzKV9UB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="1TyfEKA025OdNJ0svpGj3gy8NDD" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.xml" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -163,24 +173,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ef068fcd-60a4-4029-b084-f972eace9a6b" name="Default Changelist" comment="" />
-      <created>1574364288577</created>
+      <changelist id="bbd3f495-703d-4c28-bc9c-7341a913ef46" name="Default Changelist" comment="" />
+      <created>1574437142794</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574364288577</updated>
-      <workItem from="1574364293272" duration="643000" />
-      <workItem from="1574365122691" duration="696000" />
-      <workItem from="1574365950947" duration="1731000" />
-      <workItem from="1574367937001" duration="471000" />
-      <workItem from="1574410733548" duration="207000" />
-      <workItem from="1574411043434" duration="3437000" />
-      <workItem from="1574414523690" duration="3649000" />
-      <workItem from="1574426388638" duration="3457000" />
-      <workItem from="1574432583107" duration="1657000" />
-      <workItem from="1574434271737" duration="81000" />
-      <workItem from="1574434375713" duration="15000" />
-      <workItem from="1574434414716" duration="60000" />
-      <workItem from="1574434508407" duration="68000" />
+      <updated>1574437142794</updated>
+      <workItem from="1574437145590" duration="2190000" />
+      <workItem from="1574440349892" duration="4843000" />
     </task>
     <servers />
   </component>
@@ -199,8 +198,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

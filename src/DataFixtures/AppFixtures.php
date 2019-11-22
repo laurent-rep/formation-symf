@@ -20,7 +20,7 @@ class AppFixtures extends Fixture
 
             $fTitle = $faker->sentence();
             $fImage = $faker->imageUrl(1000, 350);
-            $fIntro = $faker->paragraph(2);
+            $fIntro = $faker->paragraph(1);
             $fContent = '<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>';
 
             $annonce->setTitle($fTitle)
@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
 
                 $image = new Image();
                 $image->setUrl($faker->imageUrl())
-                    ->setCaption($faker->sentence())
+                    ->setCaption($faker->sentence(1))
                     ->setAnnonce($annonce);
 
 

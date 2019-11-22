@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>SymBnB - {% block title %}Welcome!{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
@@ -17,17 +18,11 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="{{ path('home') }}">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ path('annonces_index') }}">Annonces</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

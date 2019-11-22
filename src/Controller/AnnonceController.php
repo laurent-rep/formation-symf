@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Annonce;
 use App\Repository\AnnonceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class AnnonceController extends AbstractController
     {
         $annonces = $monRepo->findAll();
 
+
         return $this->render('annonce/index.html.twig', [
             'annonce' => $annonces,
         ]);
@@ -25,18 +27,28 @@ class AnnonceController extends AbstractController
 
 
     /**
-     * Permet d'afficher une seule annonce
-     * @Route("/annonces/{slug}", name="annonce_show")
-     * @param $slug
-     * @param AnnonceRepository $repository
+     * @Route("/annonces/new", name="annonce_create")
      * @return Response
      */
-    public function show($slug, AnnonceRepository $repository)
+    public function create()
     {
-        // On récupère l'annonce qui correspond au slug
-        $annonce = $repository->findOneBy($slug);
+        return $this->render('annonce/new.html.twig');
 
-        return $this->render('annonce/show.html.twig');
+    }
+
+
+    /**
+     * Permet d'afficher une seule annonce
+     * @Route("/annonces/{slug}", name="annonce_show")
+     * @param Annonce $annonce
+     * @return Response
+     */
+    public function show(Annonce $annonce)
+    {
+        return $this->render('annonce/show.html.twig', [
+            'annonce' => $annonce
+        ]);
+
 
 
     }
