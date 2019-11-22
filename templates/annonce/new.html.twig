@@ -1,11 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    Création d'un annonce
-{% endblock %}
+{% block title %}Création d'un annonce{% endblock %}
+
 
 {% block body %}
     <div class="container">
         <h1>Créer une nouvelle annonce</h1>
+
+        {# {{ form(form) }} #}
+
+        {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary">Créer la nouvelle annonce</button>
+
+        {{ form_end(form) }}
     </div>
 {% endblock %}
