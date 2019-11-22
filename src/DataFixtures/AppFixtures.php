@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
             $fTitle = $faker->sentence();
             $fImage = $faker->imageUrl(1000, 350);
             $fIntro = $faker->paragraph(2);
-            $fContent = '<p>' . join('</p><p>', $faker->paragraphs(5)) . '</p>';
+            $fContent = '<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>';
 
             $annonce->setTitle($fTitle)
                 ->setCoverImage($fImage)
