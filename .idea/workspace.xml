@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef068fcd-60a4-4029-b084-f972eace9a6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/annonce/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +144,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,7 +175,12 @@
       <workItem from="1574410733548" duration="207000" />
       <workItem from="1574411043434" duration="3437000" />
       <workItem from="1574414523690" duration="3649000" />
-      <workItem from="1574426388638" duration="3267000" />
+      <workItem from="1574426388638" duration="3457000" />
+      <workItem from="1574432583107" duration="1657000" />
+      <workItem from="1574434271737" duration="81000" />
+      <workItem from="1574434375713" duration="15000" />
+      <workItem from="1574434414716" duration="60000" />
+      <workItem from="1574434508407" duration="68000" />
     </task>
     <servers />
   </component>
