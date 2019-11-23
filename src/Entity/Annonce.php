@@ -6,10 +6,18 @@ use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert; // Permet de valider les types de données (protection formulaire back-end) Constraint(s)
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnnonceRepository")
+ * //Permet d'utiliser PreUpdate, PrePersist etc
  * @ORM\HasLifecycleCallbacks()
+ * //Permet de vérifier que notre Entity est unique dans la BDD !
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     message="Une autre annonce possède déjà ce titre !"
+ * )
  */
 class Annonce
 {
@@ -22,41 +30,62 @@ class Annonce
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *     min="10", max="255",
+     *     minMessage="Le titre doit faire plus de 10 charactères !",
+     *     maxMessage="Le titre ne peut pas faire plus de 255 charactères"
+     * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $slug;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\Positive(message="Vous devez rentrez un prix correct")
      */
     private $price;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(
+     *     min="20", max="255",
+     *     minMessage="Votre introduction doit faire plus de 20 charactères !",
+     *     maxMessage="Votre introduction ne peut pas faire plus de 255 charactères"
+     * )
      */
     private $intro;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(
+     *     min="100", max="255",
+     *     minMessage="La description doit faire plus de 100 charactères !",
+     *     maxMessage="La description ne peut pas faire plus de 255 charactères"
+     * )
      */
     private $content;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url
      */
     private $coverImage;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive(message="Veuillez renseigner au moins une chambre")
      */
     private $rooms;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true)
+     * Permet de valider aussi les sous-formulaires
+     * @Assert\Valid()
      */
     private $images;
 
@@ -69,13 +98,19 @@ class Annonce
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
-    public function initSlug(){
+    public function initSlug()
+    {
 
         if (empty($this->slug)) {
             $slugify = new Slugify();
             $this->slug = $slugify->slugify($this->title);
         }
 
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 
     public function getId(): ?int
