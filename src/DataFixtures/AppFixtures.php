@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Annonce;
 use App\Entity\Image;
+use App\Entity\Role;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -13,7 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AppFixtures extends Fixture
 {
 
-    // Pour les mots de passes
+    // On créé notre encodeur, dans les fixtures on ne peut pas utiliser l'injection de dépendance de l'encodeur comme dans le controller
     private $encoder;
 
     // Pour appeler l'encodeur il faut le construire
@@ -25,7 +26,28 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
         // Les fixtures utilises les ObjectManager et pas les EntityManagerInterface des Controllers
     {
+        // On importe et on créé faker
         $faker = Factory::create("FR-fr");
+
+
+        // On créé un nouveau role
+        $adminRole = new Role();
+        $adminRole->setTitle('ROLE_ADMIN');
+        $manager->persist($adminRole);
+
+        // On créé un nouvel utilisateur
+        $adminUser = new User();
+        $adminUser->setFirstName('Admin')
+            ->setLastName('Admin')
+            ->setEmail('admin@symfony.fr')
+            ->setHash($this->encoder->encodePassword($adminUser, 'pass'))
+            ->setAvatar('https://avatars.io/twitter/LiiorC')
+            ->setIntroduction($faker->sentence)
+            ->setDescription('<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>')
+            // On oubli pas de lui rajouter son role !
+            ->addUserRole($adminRole);
+        $manager->persist($adminUser);
+
 
         // ICI NOUS GERONS LES UTILISATEURS
         $users = [];

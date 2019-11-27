@@ -92,6 +92,11 @@ class User implements UserInterface // UserInterface => Nécéssaire à TOUS les
      */
     private $annonces;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Role", mappedBy="users")
+     */
+    private $userRoles;
+
 
     /**
      * @ORM\PrePersist()
@@ -104,7 +109,7 @@ class User implements UserInterface // UserInterface => Nécéssaire à TOUS les
             // nouvelle classe slugify
             $slugify = new Slugify();
             // On dit que le slug = slugify(ce que je veux)
-            $this->slug = $slugify->slugify($this->firstName . '' . $this->lastName);
+            $this->slug = $slugify->slugify($this->firstName . '-' . $this->lastName);
         }
 
     }
@@ -118,6 +123,7 @@ class User implements UserInterface // UserInterface => Nécéssaire à TOUS les
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
+        $this->userRoles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -257,7 +263,23 @@ class User implements UserInterface // UserInterface => Nécéssaire à TOUS les
 
     public function getRoles()
     {
-        return ['ROLE_USER']; // Doit retourner un tabler de chaine de caractère (ce que l'utilisateur peut faire)
+        // Pour pouvoir get un role, comme c'est une entity il faut faire un fonction qui la retournera en string
+
+        //On stock le role dans une variable, la fonction map() permet de créer un tableau avec le résultat de la fonction
+        // On demande à la fonction ce qu'on veut qu'elle nous retourne (le titre de du role)
+        $role = $this->userRoles->map(function ($role) {
+                return $role->getTitle();
+        })->toArray();
+
+        // Tous les utilisateurs doivent forcément avoir le ROLE_USER, mais tous n'ont pas forcément un autre role =! Un utilisateur n'est pas un Anonyme
+        // Alors à notre tableau qui à parcouru tous les rôles de l'utilisateur, on lui rajoute aussi le ROLE_USER
+        // Comme ça si l'utilisateur n'a pas de role, il aura forcément le ROLE_USER
+        $role[] = 'ROLE_USER';
+
+        dump($role);
+
+        return $role;
+
     }
 
     public function getPassword()
@@ -278,6 +300,35 @@ class User implements UserInterface // UserInterface => Nécéssaire à TOUS les
 
     public function eraseCredentials()
     {
-    } // Supprime des données sensibles de l'utilisateurs dans le code (Nous passons par la BDD et encodés)
+        // Supprime des données sensibles de l'utilisateurs dans le code (Nous passons par la BDD et encodés)
+    }
+
+    /**
+     * @return Collection|Role[]
+     */
+    public function getUserRoles(): Collection
+    {
+        return $this->userRoles;
+    }
+
+    public function addUserRole(Role $userRole): self
+    {
+        if (!$this->userRoles->contains($userRole)) {
+            $this->userRoles[] = $userRole;
+            $userRole->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserRole(Role $userRole): self
+    {
+        if ($this->userRoles->contains($userRole)) {
+            $this->userRoles->removeElement($userRole);
+            $userRole->removeUser($this);
+        }
+
+        return $this;
+    }
 
 }

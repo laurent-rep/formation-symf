@@ -6,10 +6,14 @@ use App\Entity\Annonce;
 use App\Form\AnnonceType;
 use App\Repository\AnnonceRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class AnnonceController extends AbstractController
 {
@@ -38,6 +42,10 @@ class AnnonceController extends AbstractController
      * Permet de créer une annonce
      *
      * @Route("/annonces/new", name="annonce_create")
+     *
+     * Permet de dire que la route n'est disponible qu'aux utilisateurs connecté
+     * @IsGranted("ROLE_USER")
+     *
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @return Response
@@ -98,6 +106,10 @@ class AnnonceController extends AbstractController
      * Permet d'afficher le formulaire d'édition
      *
      * @Route("/annonces/{slug}/edit", name="annonce_edit")
+     *
+     * Permet seulement a un utilisateur connecté à qui appartient l'annonce de la modifier
+     * @Security("is_granted('ROLE_USER') and user === annonce.getAuthor()", message="Cette annonce ne vous appartient pas")
+     *
      * @param Annonce $annonce
      * @param Request $request
      * @param EntityManagerInterface $manager
@@ -164,6 +176,31 @@ class AnnonceController extends AbstractController
         ]);
 
 
+    }
+
+
+    /**
+     * Permet de supprimer une annonce
+     *
+     * @Route("/annonces/{slug}/delete", name="annonce_delete")
+     * @Security("is_granted('ROLE_USER') and user === annonce.getAuthor()", message="Vous n'avez pas le droit d'acceder à cette ressource")
+     * @param Annonce $annonce
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
+     */
+    public function delete(Annonce $annonce, EntityManagerInterface $manager)
+    {
+
+        // On demande au manager de supprimer l'annonce
+        $manager->remove($annonce);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            "L'annonce <strong>{$annonce->getTitle()} à été suppprimée </strong>"
+        );
+
+        return $this->redirectToRoute("annonces_index");
     }
 
 }
