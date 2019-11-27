@@ -6,14 +6,16 @@ use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity; // Permet de dire que l'entity est unique
 use Symfony\Component\Validator\Constraints as Assert; // Permet de valider les types de données (protection formulaire back-end) Constraint(s)
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnnonceRepository")
  * //Permet d'utiliser PreUpdate, PrePersist etc
  * @ORM\HasLifecycleCallbacks()
- * //Permet de vérifier que notre Entity est unique dans la BDD !
+ *  Permet de vérifier que notre Entity est unique dans la BDD !
+ *  Unique Entity prend deux paramètres : les champs et le message
+ *  Ici le titre doit être unique
  * @UniqueEntity(
  *     fields={"title"},
  *     message="Une autre annonce possède déjà ce titre !"
@@ -88,6 +90,12 @@ class Annonce
      * @Assert\Valid()
      */
     private $images;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="annonces")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     public function __construct()
     {
@@ -229,6 +237,18 @@ class Annonce
                 $image->setAnnonce(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

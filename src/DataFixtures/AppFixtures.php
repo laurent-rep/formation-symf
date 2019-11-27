@@ -4,16 +4,64 @@ namespace App\DataFixtures;
 
 use App\Entity\Annonce;
 use App\Entity\Image;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
+
+    // Pour les mots de passes
+    private $encoder;
+
+    // Pour appeler l'encodeur il faut le construire
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
+
     public function load(ObjectManager $manager)
+        // Les fixtures utilises les ObjectManager et pas les EntityManagerInterface des Controllers
     {
         $faker = Factory::create("FR-fr");
 
+        // ICI NOUS GERONS LES UTILISATEURS
+        $users = [];
+        $genres = ['male', 'female'];
+
+
+        for ($i = 1; $i <= 10; $i++) {
+            $user = new User();
+
+            $genre = $faker->randomElement($genres);
+
+            $picture = "https://randomuser.me/api/portraits/";
+            $pictureiD = $faker->numberBetween(1, 99) . '.jpg';
+
+            // $picture = $picture . ($genre == 'male' ? 'men/' : 'women/') . $pictureiD;
+            if ($genre == 'male') $picture = $picture . 'men/' . $pictureiD;
+            else $picture = $picture . 'women/' . $pictureiD;
+
+            // MOT DE PASSE HASHER
+            $hash = $this->encoder->encodePassword($user, 'password'); // A besoin de UserInterface ! (User)
+
+
+            $user->setFirstName($faker->firstName($genre))
+                ->setLastName($faker->lastName)
+                ->setEmail($faker->email)
+                ->setIntroduction($faker->sentence)
+                ->setDescription('<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>')
+                ->setHash($hash)
+                ->setAvatar($picture);
+
+            $manager->persist($user);
+            $users[] = $user;
+        }
+
+
+        // ICI NOUS GERONS LES ANONCES
         for ($i = 1; $i <= 30; $i++) {
 
             $annonce = new Annonce();
@@ -23,12 +71,15 @@ class AppFixtures extends Fixture
             $fIntro = $faker->paragraph(1);
             $fContent = '<p>' . join('</p><p>', $faker->paragraphs(3)) . '</p>';
 
+            $user = $users[mt_rand(0, count($users) - 1)];
+
             $annonce->setTitle($fTitle)
                 ->setCoverImage($fImage)
                 ->setIntro($fIntro)
                 ->setContent($fContent)
                 ->setPrice(mt_rand(12, 520))
-                ->setRooms(mt_rand(1, 8));
+                ->setRooms(mt_rand(1, 8))
+                ->setAuthor($user);
 
             for ($j = 1; $j <= mt_rand(2, 5); $j++) {
 

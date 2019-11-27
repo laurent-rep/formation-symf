@@ -54,3 +54,12 @@ Les FIXTURES :
     Ne pas oublier $manager->flush() à la fin
 
     Pour charger la/les Fixtures, on utilise la commande : php /bin/console doctrine:fixtures:load
+
+
+La SECURITE :
+
+    Fichier security.yaml :
+
+    encoders:
+            App\Entity\User:
+                algorithm: bcrypt

@@ -1,13 +1,43 @@
 security:
+    encoders:
+    # On passe notre Entity Usser au encoders pour définir son algorithm de cryptage
+        App\Entity\User:
+    # On utilise auto et pas bcrypt (deprecated)
+            algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: null }
+    # Ici on créé un nouveau provider pour que les utilisateurs puissent se connecter à la BDD
+    # Ici le provider vient d'une Entity qui a comme classe User (c'est nos utilisateurs)
+    # Il faut préciser en property quel type de données pour se connecter (email, pseudo etc)
+    # Ne pas oublier de mettre notre provider aussi dans le firewall
+        in_database:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: lazy
+    # Le provider créé plus haut ajouté au firewall
+            provider: in_database
+    # On précise le formulaire utilisé pour le login
+            form_login:
+    # Le chemin de page de connexion (Route)
+                login_path: account_login
+    # Chemin sur lequel vérifier les informations (Route)
+                check_path: account_login
+
+    # Logout
+            logout:
+    # Le chemin du logout (Route)
+                path: account_logout
+    # La redirection
+                target: account_login
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

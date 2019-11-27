@@ -16,9 +16,33 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Mon compte</a>
-                </li>
+                {% if app.user %}
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink">
+                            <img src="{{ app.user.avatar }}" class="avatar avatar-mini" alt="Avatar de {{ app.user.fullName }}"> {{ app.user.fullName }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdownLink">
+
+                            <a href="{{ path('annonce_create') }}" class="dropdown-item">Créer une annonce</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="{{ path('account_index') }}" class="dropdown-item">Mon compte</a>
+                            <a href="{{ path('account_profil') }}" class="dropdown-item">Modifier mon profil</a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <a href="{{ path('account_logout') }}" class="dropdown-item">Déconnexion</a>
+
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{{ path('account_register') }}" class="nav-link">Inscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('account_login') }}" class="nav-link">Connexion</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -28,10 +52,13 @@
 
 {# MESSAGE FLASH #}
 
-{% for label, messages in app.flashes %}
-    <div class="alert alert-{{ label }}">
-        {% for message in messages  %}
-            <p>{{ message | raw}}</p>
-        {% endfor %}
+{% for type, messages in app.flashes %}
+    <div class="container">
+        <div class="alert alert-{{ type }}">
+            {% for message in messages %}
+                <p>{{ message | raw }}</p>
+            {% endfor %}
+        </div>
     </div>
+
 {% endfor %}

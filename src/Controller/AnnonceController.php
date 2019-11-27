@@ -15,95 +15,128 @@ class AnnonceController extends AbstractController
 {
 
     /**
+     * Affichage des annonces
+     *
      * @Route("/annonces", name="annonces_index")
      * @param AnnonceRepository $monRepo
      * @return Response
      */
-    public function index(AnnonceRepository $monRepo) // AnnonceRepository il nous sert à prendre des données dans la BDD par rapport à notre Entity (Injecté par référence)
+    public function index(AnnonceRepository $monRepo)
+        // AnnonceRepository il nous sert à prendre des données dans la BDD par rapport à notre Entity (Injecté par référence)
     {
-        $annonces = $monRepo->findAll(); // Prend tout ce qu'il trouve sur notre Entity
+        // Prend tout ce qu'il trouve sur notre Entity
+        $annonces = $monRepo->findAll();
 
         return $this->render('annonce/index.html.twig', [
-            'annonce' => $annonces, // On passe a twig tout ce qu'il y a dans la BDD sur notre Entity
+            // On passe a twig tout ce qu'il y a dans la BDD sur notre Entity
+            'annonce' => $annonces,
         ]);
     }
 
 
     /**
+     * Permet de créer une annonce
+     *
      * @Route("/annonces/new", name="annonce_create")
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function create(Request $request, EntityManagerInterface $manager) // Request : soumission de formulaire EntityManagerInterface : permet d'injecter un manager de doctrine
+    public function create(Request $request, EntityManagerInterface $manager)
+        // Request : soumission de formulaire EntityManagerInterface : permet d'injecter un manager de doctrine
     {
 
-        $annonce = new Annonce(); // On créé une nouvelle annonce
+        // On créé une nouvelle annonce
+        $annonce = new Annonce();
 
-        $form = $this->createForm(AnnonceType::class, $annonce); // Créé un formulaire de type AnnonceType, qu'on ajoute à l'annonce
+        // Créé un formulaire de type AnnonceType, qu'on ajoute à l'annonce
+        $form = $this->createForm(AnnonceType::class, $annonce);
 
-        $form->handleRequest($request); // Dit au Formulaire de gérer la requête envoyé par un bouton de type submit
+        // Dit au Formulaire de gérer la requête envoyé par un bouton de type submit
+        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) { // Si le formulaire est soumis et valide
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Si le formulaire est soumis et valide
 
-            foreach ($annonce->getImages() as $image) { // Pour faire persister les images soumises dans le formulaire on parcours toutes les images
-                $image->setAnnonce($annonce); // On dit a quelle annonce appartient l'image
+            // Pour faire persister les images soumises dans le formulaire on parcours toutes les images
+            foreach ($annonce->getImages() as $image) {
+                // On dit a quelle annonce appartient l'image
+                $image->setAnnonce($annonce);
                 $manager->persist($image);
 
             }
 
-            $manager->persist($annonce); // On fait persister notre entité entière avec ses images son titre etc
-            $manager->flush(); // On enregistre tout
+            // Prendre en compte l'utilisateur de l'annonce !
+            $annonce->setAuthor($this->getUser());
 
-            $this->addFlash( // On ajoute un message flash
+            // On fait persister notre entité entière avec ses images son titre etc
+            $manager->persist($annonce);
+            // On enregistre tout
+            $manager->flush();
+
+            // On ajoute un message flash
+            $this->addFlash(
                 'success',
                 "L'annonce <strong>{$annonce->getTitle()}</strong> a bien enregistré !"
             );
 
-            return $this->redirectToRoute('annonce_show', [ // Redirection vers un route choisie (la notre a besoin d'un slug)
+            return $this->redirectToRoute('annonce_show', [
+                // Redirection vers un route choisie (la notre a besoin d'un slug)
                 'slug' => $annonce->getSlug()
             ]);
         }
 
 
         return $this->render('annonce/new.html.twig', [
-            'form' => $form->createView() // On passe la vue du formulaire a twig
+            // On passe la vue du formulaire a twig
+            'form' => $form->createView()
         ]);
 
     }
 
     /**
      * Permet d'afficher le formulaire d'édition
+     *
      * @Route("/annonces/{slug}/edit", name="annonce_edit")
      * @param Annonce $annonce
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function edit(Annonce $annonce, Request $request, EntityManagerInterface $manager){
+    public function edit(Annonce $annonce, Request $request, EntityManagerInterface $manager)
+    {
 
-        $form = $this->createForm(AnnonceType::class, $annonce); // Créé un formulaire de type AnnonceType, qu'on ajoute à l'annonce
+        // Créé un formulaire de type AnnonceType, qu'on ajoute à l'annonce
+        $form = $this->createForm(AnnonceType::class, $annonce);
 
-        $form->handleRequest($request); // Dit au Formulaire de gérer la requête envoyé par un bouton de type submit
+        // Dit au Formulaire de gérer la requête envoyé par un bouton de type submit
+        $form->handleRequest($request);
 
 
-        if ($form->isSubmitted() && $form->isValid()) { // Si le formulaire est soumis et valide
+        // Si le formulaire est soumis et valide
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            foreach ($annonce->getImages() as $image) { // Pour faire persister les images soumises dans le formulaire on parcours toutes les images
-                $image->setAnnonce($annonce); // On dit a quelle annonce appartient l'image
+            // Pour faire persister les images soumises dans le formulaire on parcours toutes les images
+            foreach ($annonce->getImages() as $image) {
+                // On dit a quelle annonce appartient l'image
+                $image->setAnnonce($annonce);
                 $manager->persist($image);
 
             }
 
-            $manager->persist($annonce); // On fait persister notre entité entière avec ses images son titre etc
-            $manager->flush(); // On enregistre tout
+            // On fait persister notre entité entière avec ses images son titre etc
+            $manager->persist($annonce);
+            // On enregistre tout
+            $manager->flush();
 
-            $this->addFlash( // On ajoute un message flash
+            // On ajoute un message flash
+            $this->addFlash(
                 'success',
                 "L'annonce <strong>{$annonce->getTitle()}</strong> a bien été modifiée !"
             );
 
-            return $this->redirectToRoute('annonce_show', [ // Redirection vers un route choisie (la notre a besoin d'un slug)
+            return $this->redirectToRoute('annonce_show', [
+                // Redirection vers un route choisie (la notre a besoin d'un slug)
                 'slug' => $annonce->getSlug()
             ]);
         }
@@ -123,7 +156,8 @@ class AnnonceController extends AbstractController
      * @param Annonce $annonce
      * @return Response
      */
-    public function show(Annonce $annonce) //Annonce est notre Entity on l'injecte par dépendance pour pouvoir la passer a twig directement
+    public function show(Annonce $annonce)
+        //Annonce est notre Entity on l'injecte par dépendance pour pouvoir la passer a twig directement
     {
         return $this->render('annonce/show.html.twig', [
             'annonce' => $annonce

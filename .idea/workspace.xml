@@ -2,20 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc39c2f-6274-4bd9-ac61-cb3bddc31f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/annonce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ImageType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/annonce/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/_collection.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/PasswordUpdate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AccountType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ApplicationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PasswordUpdateType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191123211224.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191123211818.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/PasswordUpdateRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/password.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/profil.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/registration.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Image.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/AnnonceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AnnonceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/annonce/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/annonce/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/annonce/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +66,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Twig" />
         <option value="JavaScript File" />
+        <option value="Twig" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -176,11 +201,12 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/annonce" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
     </key>
   </component>
@@ -211,7 +237,17 @@
       <workItem from="1574506655946" duration="90000" />
       <workItem from="1574506766504" duration="52000" />
       <workItem from="1574507559424" duration="73000" />
-      <workItem from="1574528753820" duration="13358000" />
+      <workItem from="1574528753820" duration="17341000" />
+      <workItem from="1574689027203" duration="84000" />
+      <workItem from="1574699111858" duration="1424000" />
+      <workItem from="1574700578726" duration="9671000" />
+      <workItem from="1574756897571" duration="7123000" />
+      <workItem from="1574771467548" duration="1061000" />
+      <workItem from="1574775398354" duration="1743000" />
+      <workItem from="1574784825539" duration="799000" />
+      <workItem from="1574785894991" duration="6047000" />
+      <workItem from="1574792654024" duration="4516000" />
+      <workItem from="1574840433574" duration="1838000" />
     </task>
     <servers />
   </component>

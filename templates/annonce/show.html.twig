@@ -51,20 +51,23 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="http://placehold.it/64x64" alt="Avatar de X">
+                    <div class="col-3">
+                        <a href="{{ path('user_show', { 'slug': annonce.author.slug } ) }}"> {#  path : lien vers une route, 2eme param : {} #}
+                            <img src="{{ annonce.author.avatar }}" class="avatar avatar-medium"
+                                 alt="Avatar de {{ annonce.author.fullName }}">
+                        </a>
                     </div>
                     <div class="col">
-                        <h3>X Dupont</h3>
-                        <span class="badge badge-primary">3 annonces</span>
+                        {# Nous avons créé nous même fullName dans User #}
+                        <a href="{{ path('user_show', { 'slug': annonce.author.slug } ) }}"> {#  path : lien vers une route, 2eme param : {} #}
+                            <h3>{{ annonce.author.fullName }}</h3>
+                        </a>
+                        {# Ici on demande la lenght de annonces pour savoir cb il y en a #}
+                        {# On ne peut pas demander le tableau en string #}
+                        <span class="badge badge-primary">{{ annonce.author.annonces | length }} annonces</span>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque fuga harum hic iste nostrum obcaecati
-                    odio praesentium, quis sequi voluptate.</p>
-                <p>Amet aperiam architecto atque delectus doloribus eligendi fugit id incidunt, inventore laboriosam
-                    molestias necessitatibus nulla pariatur quae repellat voluptatem voluptatum!</p>
-                <p>Aliquam, amet consectetur consequuntur deleniti impedit laborum non quos repellendus ut? Deleniti
-                    eius inventore molestias perspiciatis sapiente sunt vero voluptas!</p>
+                {{ annonce.author.description | raw }}
             </div>
         </div>
     </div>
