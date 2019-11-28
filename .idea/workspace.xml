@@ -2,18 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc39c2f-6274-4bd9-ac61-cb3bddc31f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191127081915.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/RoleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/BookingType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DataTransformer/FrenchToDateTimeTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191127182808.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191127201217.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/BookingRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/booking.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booking/book.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booking/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/annonce.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/annonce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AnnonceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/annonce/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +190,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -225,7 +236,16 @@
       <workItem from="1574784825539" duration="799000" />
       <workItem from="1574785894991" duration="6047000" />
       <workItem from="1574792654024" duration="4516000" />
-      <workItem from="1574840433574" duration="11120000" />
+      <workItem from="1574840433574" duration="12967000" />
+      <workItem from="1574876026235" duration="6440000" />
+      <workItem from="1574883204496" duration="5429000" />
+      <workItem from="1574888864232" duration="76000" />
+      <workItem from="1574889017701" duration="1099000" />
+      <workItem from="1574890771114" duration="127000" />
+      <workItem from="1574890993171" duration="36000" />
+      <workItem from="1574891214732" duration="24000" />
+      <workItem from="1574892343094" duration="4084000" />
+      <workItem from="1574945213490" duration="12937000" />
     </task>
     <servers />
   </component>

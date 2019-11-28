@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        {{ user.description | raw }}
+        {{ user.description | striptags }}
         <hr>
         <h2>Les annonces de {{ user.fullName }}</h2>
 

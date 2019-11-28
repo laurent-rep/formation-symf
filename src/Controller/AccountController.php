@@ -232,9 +232,22 @@ class AccountController extends AbstractController
      */
     public function myAccount()
     {
-        return $this->render("user/index.html.twig",[
+        return $this->render("user/index.html.twig", [
             'user' => $this->getUser()
         ]);
+    }
+
+
+    /**
+     * Permet d'afficher les réservations
+     *
+     * @Route("account/bookings", name="account_bookings")
+     *
+     * @return Response
+     */
+    public function bookings()
+    {
+        return $this->render("/account/booking.html.twig");
     }
 
 }

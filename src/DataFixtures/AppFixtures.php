@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Annonce;
+use App\Entity\Booking;
 use App\Entity\Image;
 use App\Entity\Role;
 use App\Entity\User;
@@ -83,7 +84,7 @@ class AppFixtures extends Fixture
         }
 
 
-        // ICI NOUS GERONS LES ANONCES
+        // ICI NOUS GERONS LES ANNONCES
         for ($i = 1; $i <= 30; $i++) {
 
             $annonce = new Annonce();
@@ -106,12 +107,55 @@ class AppFixtures extends Fixture
             for ($j = 1; $j <= mt_rand(2, 5); $j++) {
 
                 $image = new Image();
+
                 $image->setUrl($faker->imageUrl())
                     ->setCaption($faker->sentence(1))
                     ->setAnnonce($annonce);
 
 
                 $manager->persist($image);
+            }
+
+            // GESTION DES RESERVATIONS
+            for ($j = 1; $j <= mt_rand(0, 10); $j++) {
+
+                // On créé un nouveau Booking
+                $booking = new Booking();
+
+                // Date de création de l'annonce
+                $createdAt = $faker->dateTimeBetween('-6 months');
+                // Date de début de booking
+                $startDate = $faker->dateTimeBetween('-3 months');
+
+
+                // Durée de booking (en jours)
+                $duration = mt_rand(3, 10);
+                // Fin de booking
+                $endDate = $faker->dateTimeBetween($startDate, "+$duration days");
+
+
+                // Le prix du booking = Le prix de l'annonce * sa duréé
+                $amount = $annonce->getPrice() * $duration;
+
+                // On pioche un utilisateurs dans le tableau des users qui est plus haut
+                $booker = $users[mt_rand(0, count($users) - 1)];
+
+                // On génère un commentaire
+                $comment = $faker->paragraph;
+
+                // On set tous au booking !
+                $booking->setBooker($booker)
+                ->setAnnonce($annonce)
+                ->setStartDate($startDate)
+                ->setEndDate($endDate)
+                ->setCreateAt($createdAt)
+                ->setAmount($amount)
+                ->setComment($comment);
+
+                $manager->persist($booking);
+
+
+
             }
 
             $manager->persist($annonce);
