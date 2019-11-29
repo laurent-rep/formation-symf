@@ -20,6 +20,28 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        # On créé un firewall pour les admins, on se place entre le dev et le main pour qu'il soit vu avant le main
+        admin:
+        #Tout ce qui commence par admin fait partie du firewall admin
+            pattern: ^/admin
+        #On peut y accéder de manière anonyme (pour la page de login admin)
+            anonymous: true
+
+        #Si j'ai des connexions qui est le provider ? (L'entité qui peut se connecter)
+            provider: in_database
+
+        #Le form_login est différents ici, on veut qu'il nous redirige sur le form_login de /admin/login
+            form_login:
+                #Le chemin du formulaire de connexion
+                login_path: admin_account_login
+                #La vérification pour voir si les infos sont bonnes
+                check_path: admin_account_login
+                default_target_path: admin_annonces_index
+
+            logout:
+                path: admin_account_logout
+                target: admin_account_login
+
         main:
             anonymous: lazy
     # Le provider créé plus haut ajouté au firewall
@@ -48,5 +70,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # Il faut donc délocker le admin/login ET IL FAUT LE FAIRE AVANT DE LOCKER ADMIN
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/profile, roles: ROLE_USER }
+        # Sur toutes les routes /admin on vérifie le role d'admin
+        - { path: ^/admin, roles: ROLE_ADMIN }

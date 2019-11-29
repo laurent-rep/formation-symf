@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Entity\Booking;
+use App\Entity\Comment;
 use App\Form\BookingType;
+use App\Form\CommentType;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -43,7 +45,7 @@ class BookingController extends AbstractController
 
             // Le booker est l'user connecté
             $booking->setBooker($user)
-            ->setAnnonce($annonce);
+                ->setAnnonce($annonce);
 
             // Si les dates ne sont pas disponibles, erreur
             if (!$booking->isBookableDate()) {
@@ -80,12 +82,39 @@ class BookingController extends AbstractController
      *
      * @Route("/booking/{id}", name="booking_show")
      * @param Booking $booking
+     * @param Request $request
+     * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function show(Booking $booking)
+    public function show(Booking $booking, Request $request, EntityManagerInterface $manager)
     {
-        return $this->render("booking/show.html.twig",[
-            'booking' => $booking
+
+        // On créé le commentaire
+        $comment = new Comment();
+
+        // On créé le formulaire avec son Type et son Entity
+        $form = $this->createForm(CommentType::class, $comment);
+        // On demande au formulaire de gérer la request
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // On a besoin de dire à quelle annonce appartient le commentaire
+            $comment->setAnnonce($booking->getAnnonce())
+                // On a besoin de dire à quel auteur appartient le commentaire
+                ->setAuthor($this->getUser());
+
+            $manager->persist($comment);
+            $manager->flush();
+
+            $this->addFlash(
+                "success",
+                "Votre commentaire à bien été pris en compte !"
+            );
+        }
+
+        return $this->render("booking/show.html.twig", [
+            'booking' => $booking,
+            'form' => $form->createView()
         ]);
     }
 }

@@ -56,10 +56,92 @@ Les FIXTURES :
     Pour charger la/les Fixtures, on utilise la commande : php /bin/console doctrine:fixtures:load
 
 
+
+Les FORM :
+
+    Quand on fait un formulaire en php directement nous même, Symfony attend un name="_username" et un name="_password"
+
 La SECURITE :
 
     Fichier security.yaml :
 
     encoders:
             App\Entity\User:
-                algorithm: bcrypt
+                algorithm: auto
+    providers:
+            in_database:
+                entity:
+                    class: App\Entity\User
+                    property: email
+    firewalls:
+            dev:
+                pattern: ^/(_(profiler|wdt)|css|images|js)/
+                security: false
+
+            # On créé un firewall pour les admins, on se place entre le dev et le main pour qu'il soit vu avant le main
+            admin:
+            #Tout ce qui commence par admin fait partie du firewall admin
+                pattern: ^/admin
+            #On peut y accéder de manière anonyme (pour la page de login admin)
+                anonymous: true
+
+            #Si j'ai des connexions qui est le provider ? (L'entité quit peut se connecter)
+                provider: in_database
+
+            #Le form_login est différents ici, on veut qu'il nous redirige sur le form_login de /admin/login
+                form_login:
+                    #Le chemin du formulaire de connexion
+                    login_path: admin_account_login
+                    #La vérification pour voir si les infos sont bonnes
+                    check_path: admin_account_login
+
+            #Le logout est le même que pour tous
+                logout:
+                    path: account_logout
+                    target: home
+
+
+            main:
+                anonymous: lazy
+                provider: in_database
+                form_login:
+                    login_path: account_login
+                    check_path: account_login
+
+
+
+
+    access_control:
+            # Il faut donc délocker le admin/login ET IL FAUT LE FAIRE AVANT DE LOCKER ADMIN
+
+            - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+            # Sur toutes les routes /admin on vérifie le role d'admin
+
+            - { path: ^/admin, roles: ROLE_ADMIN }
+
+
+    @Security()
+    @IsGranted
+    @Assert\Url()
+    @Assert\Integer(min="8", minMessage"Message")
+
+
+
+
+TWIG :
+
+    - app.user
+    - app.flashes
+    - loop.index, loop.index0 (0 = i)
+
+
+    - | raw | striptags | format | number_format
+
+    - form_start
+    - form_widget
+    - form_end
+
+    - form_start
+    - form_row(form.email)
+    - form_end

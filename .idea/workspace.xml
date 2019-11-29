@@ -2,28 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc39c2f-6274-4bd9-ac61-cb3bddc31f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/BookingType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/DataTransformer/FrenchToDateTimeTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191127182808.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191127201217.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/BookingRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/account/booking.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/booking/book.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/booking/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AdminBookingType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AdminCommentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191128174758.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CommentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/account/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/annonce/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/booking/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/comment/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/partials/footer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/rating.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ApplicationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ApplicationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BookingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BookingType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/booking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/booking.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/annonce/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booking/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booking/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,12 +209,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\booking" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\comment" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\account" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\annonce" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,7 +269,19 @@
       <workItem from="1574890993171" duration="36000" />
       <workItem from="1574891214732" duration="24000" />
       <workItem from="1574892343094" duration="4084000" />
-      <workItem from="1574945213490" duration="12937000" />
+      <workItem from="1574945213490" duration="13240000" />
+      <workItem from="1574962946965" duration="458000" />
+      <workItem from="1574963430771" duration="1264000" />
+      <workItem from="1574964814455" duration="116000" />
+      <workItem from="1574964975144" duration="99000" />
+      <workItem from="1574965096970" duration="96000" />
+      <workItem from="1574965240378" duration="1749000" />
+      <workItem from="1574967548949" duration="4866000" />
+      <workItem from="1575012862659" duration="4562000" />
+      <workItem from="1575019577157" duration="6659000" />
+      <workItem from="1575035864855" duration="6783000" />
+      <workItem from="1575045952607" duration="9218000" />
+      <workItem from="1575057170083" duration="10890000" />
     </task>
     <servers />
   </component>

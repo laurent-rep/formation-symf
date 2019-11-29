@@ -35,6 +35,8 @@ class BookingType extends ApplicationType
     {
         $resolver->setDefaults([
             'data_class' => Booking::class,
+            // VALIDATION DE GROUPES
+            'validation_groups' => ['Default', 'front']
         ]);
     }
 }
