@@ -2,48 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc39c2f-6274-4bd9-ac61-cb3bddc31f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/AdminBookingType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/AdminCommentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191128174758.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CommentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/account/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/annonce/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/booking/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/comment/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/partials/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/rating.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/LiorPagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/PaginationService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FormationSymf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FormationSymf.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ApplicationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ApplicationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/BookingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BookingType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/booking.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/booking.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/annonce/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/book.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_annonce_model.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,34 +180,41 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
-      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\src" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\booking" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\comment" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\account" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\annonce" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -281,7 +264,14 @@
       <workItem from="1575019577157" duration="6659000" />
       <workItem from="1575035864855" duration="6783000" />
       <workItem from="1575045952607" duration="9218000" />
-      <workItem from="1575057170083" duration="10890000" />
+      <workItem from="1575057170083" duration="11333000" />
+      <workItem from="1575116336469" duration="3923000" />
+      <workItem from="1575120703932" duration="366000" />
+      <workItem from="1575121297783" duration="69000" />
+      <workItem from="1575121384921" duration="117000" />
+      <workItem from="1575121518053" duration="1380000" />
+      <workItem from="1575123254238" duration="61000" />
+      <workItem from="1575123366281" duration="8989000" />
     </task>
     <servers />
   </component>
@@ -303,5 +293,35 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1575120906780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575120906780" />
+    <state x="715" y="314" key="NewPhpClassDialog" timestamp="1575132306027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="314" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575132306027" />
+    <state x="742" y="254" key="SettingsEditor" timestamp="1575130551667">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="742" y="254" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575130551667" />
+    <state x="715" y="362" key="cloudConfig.PluginsDialog" timestamp="1575121362346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="362" key="cloudConfig.PluginsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575121362346" />
+    <state x="715" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1575121449842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575121449842" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1575132369748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575132369748" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1575131764621">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575131764621" />
   </component>
 </project>

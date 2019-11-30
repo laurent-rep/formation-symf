@@ -20,33 +20,36 @@
             <tbody>
             {% for annonce in annonces %}
 
-            <tr>
-                <td>{{ annonce.id }}</td>
-                <td>{{ annonce.title }}</td>
+                <tr>
+                    <td>{{ annonce.id }}</td>
+                    <td>{{ annonce.title }}</td>
 
-                <td>
-                    <img src="{{ annonce.author.avatar }}" alt="" class="avatar avatar-mini mr-2">
-                    {{ annonce.author.fullName }}
-                </td>
+                    <td>
+                        <img src="{{ annonce.author.avatar }}" alt="" class="avatar avatar-mini mr-2">
+                        {{ annonce.author.fullName }}
+                    </td>
 
-                <td class="text-center">
-                    <span class="badge badge-primary rounded">{{ annonce.bookings |length }}</span>
-                </td>
+                    <td class="text-center">
+                        <span class="badge badge-primary rounded">{{ annonce.bookings |length }}</span>
+                    </td>
 
-                <td class="text-center">
-                    <span class="badge badge-primary rounded">{{ annonce.averageRatings|round(0, 'floor') }}</span>
+                    <td class="text-center">
+                        <span class="badge badge-primary rounded">{{ annonce.averageRatings|round(0, 'floor') }}</span>
 
-                </td>
+                    </td>
 
-                <td>
-                    <a href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}" class="btn btn-primary"> <i class="fa fa-edit"></i> </a>
-                    <a href="{{ path('admin_annonce_delete', {'id': annonce.id}) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                </td>
-            </tr>
+                    <td>
+                        <a href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}" class="btn btn-primary"> <i
+                                    class="fa fa-edit"></i> </a>
+                        <a href="{{ path('admin_annonce_delete', {'id': annonce.id}) }}" class="btn btn-danger"><i
+                                    class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
             {% endfor %}
 
             </tbody>
         </table>
+        {{ include('partials/_pagination.html.twig') }}
     </div>
 
 {% endblock %}

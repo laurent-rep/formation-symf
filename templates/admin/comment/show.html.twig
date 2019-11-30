@@ -1,6 +1,6 @@
 {% extends '/admin/base.html.twig' %}
 
-{% block title %}Hello AdminCommentController!{% endblock %}
+{% block title %}Administration des commentaires{% endblock %}
 
 {% block body %}
     <div class="container-fluid">
@@ -18,7 +18,7 @@
             </tr>
             </thead>
                 <tbody>
-                {% for comment in repo %}
+                {% for comment in pagination.data %}
 
                 <tr>
                     <td>{{ comment.id }}</td>
@@ -47,7 +47,28 @@
                 {% endfor %}
 
                 </tbody>
+
         </table>
+        <div class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item {% if pagination.currentPage == 1 %}disabled {% endif %}">
+                    <a class="page-link" href="{{ path('admin_comment_index', {'page': pagination.currentPage - 1 }) }}">&laquo;</a>
+                </li>
+
+                {% for i in 1..pagination.pages %}
+
+                    <li class="page-item {% if pagination.currentPage == i %} active {% endif %}">
+                        <a class="page-link" href="{{ path('admin_comment_index', {'page': i}) }}">{{ i }}</a>
+                    </li>
+
+                {% endfor %}
+
+                <li class="page-item {% if pagination.currentPage == pagination.pages %}disabled{% endif %}">
+                    <a class="page-link" href="{{ path('admin_comment_index', {'page': pagination.currentPage + 1}) }}">&raquo;</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 
 {% endblock %}

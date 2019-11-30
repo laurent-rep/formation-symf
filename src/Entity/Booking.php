@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -60,14 +62,14 @@ class Booking
 
 
     /**
-     * @throws Exception
-     * @ORM\PreUpdate()
      * @ORM\PrePersist()
+     * @return void
+     * @throws Exception
      */
     public function prePersist()
     {
         if (empty($this->createAt)) {
-            $this->createAt = new \DateTime();
+            $this->createAt = new DateTime();
         }
         if (empty($this->amount)) {
             // Prix annonce * nb Jour
@@ -102,7 +104,7 @@ class Booking
         }, $notAvailablesDays);
 
         foreach ($days as $day) {
-           if(array_search($day, $notAvailable) !== false) return false;
+            if (array_search($day, $notAvailable) !== false) return false;
         }
 
         return true;
@@ -124,7 +126,7 @@ class Booking
         );
 
         $days = array_map(function ($dayTimestamp) {
-            return new \DateTime(date('Y-m-d', $dayTimestamp));
+            return new DateTime(date('Y-m-d', $dayTimestamp));
         }, $resultat);
 
         return $days;
@@ -160,36 +162,36 @@ class Booking
         return $this;
     }
 
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?DateTimeInterface
     {
         return $this->startDate;
     }
 
-    public function setStartDate(\DateTimeInterface $startDate): self
+    public function setStartDate(DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 
         return $this;
     }
 
-    public function getEndDate(): ?\DateTimeInterface
+    public function getEndDate(): ?DateTimeInterface
     {
         return $this->endDate;
     }
 
-    public function setEndDate(\DateTimeInterface $endDate): self
+    public function setEndDate(DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeInterface
+    public function getCreateAt(): ?DateTimeInterface
     {
         return $this->createAt;
     }
 
-    public function setCreateAt(\DateTimeInterface $createAt): self
+    public function setCreateAt(DateTimeInterface $createAt): self
     {
         $this->createAt = $createAt;
 

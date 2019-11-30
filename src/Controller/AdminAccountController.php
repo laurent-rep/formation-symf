@@ -16,6 +16,8 @@ class AdminAccountController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
+
+
         $error = $authenticationUtils->getLastAuthenticationError();
         $username = $authenticationUtils->getLastUsername();
 

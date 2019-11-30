@@ -86,7 +86,7 @@ class AppFixtures extends Fixture
 
 
         // ICI NOUS GERONS LES ANNONCES
-        for ($i = 1; $i <= 30; $i++) {
+        for ($i = 1; $i <= 72; $i++) {
 
             $annonce = new Annonce();
 
