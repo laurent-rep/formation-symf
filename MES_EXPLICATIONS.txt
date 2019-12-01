@@ -12,6 +12,7 @@ REQUIRE :
     - fzaninotto/faker --dev
     - orm-fixtures --dev
     - encore
+    - symfony/apache-pack
 
     npm:
 
