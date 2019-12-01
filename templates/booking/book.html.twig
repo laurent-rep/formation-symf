@@ -3,9 +3,11 @@
 {% block title %}Réservez l'annnonce {{ annonce.title }}{% endblock %}
 
 {% block stylesheets %}
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
           integrity="sha256-siyOpF/pBWUPgIcQi17TLBkjvNgNQArcmwJB8YvkAgg=" crossorigin="anonymous"/>
+
 {% endblock %}
 
 {% block body %}
@@ -29,7 +31,7 @@
                 </div>
             </div>
             <h4>Montant du séjour : <span id="amount">...</span> &euro;</h4>
-            <span id="days">0</span> nuits à {{ annonce.price | number_format(2,',',' ')}} &euro; par nuit
+            <span id="days">0</span> nuits à {{ annonce.price | number_format(2,',',' ') }} &euro; par nuit
 
             {# Le commentaire #}
             <h4>Vous avez un commentaire ?</h4>
@@ -48,12 +50,15 @@
 {% endblock %}
 
 {% block javascripts %}
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
             integrity="sha256-bqVeqGdJ7h/lYPq6xrPv/YGzMEb6dNxlfiTUHSgRCp8=" crossorigin="anonymous"></script>
 
     <script>
+
         $(document).ready(function () {
-            $('#booking_startDate, #booking_endDate').datepicker({
+            $("#booking_startDate, #booking_endDate").datepicker({
                 format: 'dd/mm/yyyy',
                 datesDisabled: [
                     {% for day in annonce.notAvailablesDays %}
@@ -61,32 +66,30 @@
                     {% endfor %}
                 ],
                 startDate: new Date()
-
             });
 
-            $('#booking_startDate, #booking_endDate').on('change', calculerAmount);
+
+            $("#booking_startDate, #booking_endDate").on('change', calculateAmount);
         });
 
-        function calculerAmount() {
-            // On chope les dates
+        function calculateAmount() {
 
-            const endDate = new Date($('#booking_endDate').val().replace(/(\d+)\/(\d+)\/(\d{4})/, '$3-$2-$1'));
-            const startDate = new Date($('#booking_startDate').val().replace(/(\d+)\/(\d+)\/(\d{4})/, '$3-$2-$1'));
+            const startDate = new Date($("#booking_startDate").val().replace(/(\d+)\/(\d+)\/(\d{4})/, '$3-$2-$1'));
+            const endDate = new Date($("#booking_endDate").val().replace(/(\d+)\/(\d+)\/(\d{4})/, '$3-$2-$1'));
 
             if (startDate && endDate && startDate < endDate) {
-
-                const DAY_IN_MS = 24 * 60 * 60 * 1000;
+                const DAY = 24 * 60 * 60 * 1000;
                 const interval = endDate.getTime() - startDate.getTime();
-                const days = interval / DAY_IN_MS;
-
+                const days = interval / DAY ;
                 const amount = days * {{ annonce.price }};
 
                 $('#days').text(days);
                 $('#amount').text(amount.toLocaleString());
-
-
             }
+
         }
+
+
     </script>
 {% endblock %}
 

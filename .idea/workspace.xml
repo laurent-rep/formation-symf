@@ -2,23 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc39c2f-6274-4bd9-ac61-cb3bddc31f16" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/LiorPagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/PaginationService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/ad.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/prod/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/test/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/StatService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/FormationSymf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FormationSymf.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminAccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminAnnonceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminBookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/annonce/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/booking/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/comment/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MES_EXPLICATIONS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/annonce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AnnonceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AnnonceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/account/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/account/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/annonce/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/annonce/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booking/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +66,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Twig" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -174,6 +192,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1U0ve1j1y85E6nZeggk6a4wHAz0" />
@@ -189,21 +208,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/public/build/app.css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\assets" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\assets\css" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\dashboard" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\src" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\booking" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\comment" />
       <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\account" />
-      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\admin\annonce" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\PROJETS_SYMFONY\FormationSymf\public" />
-      <recent name="E:\PROJETS_SYMFONY\FormationSymf\templates\annonce" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -271,7 +293,13 @@
       <workItem from="1575121384921" duration="117000" />
       <workItem from="1575121518053" duration="1380000" />
       <workItem from="1575123254238" duration="61000" />
-      <workItem from="1575123366281" duration="8989000" />
+      <workItem from="1575123366281" duration="18604000" />
+      <workItem from="1575142043561" duration="24000" />
+      <workItem from="1575142082297" duration="4629000" />
+      <workItem from="1575147636294" duration="4951000" />
+      <workItem from="1575153644150" duration="1140000" />
+      <workItem from="1575155338347" duration="2036000" />
+      <workItem from="1575193654719" duration="4660000" />
     </task>
     <servers />
   </component>
@@ -295,18 +323,46 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Inspections" timestamp="1575148218793">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="177" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1575148218793" />
+    <state x="690" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575140731265">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575140731265" />
     <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1575120906780">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575120906780" />
-    <state x="715" y="314" key="NewPhpClassDialog" timestamp="1575132306027">
+    <state width="1877" height="265" key="GridCell.Tab.0.bottom" timestamp="1575138820182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="715" y="314" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575132306027" />
-    <state x="742" y="254" key="SettingsEditor" timestamp="1575130551667">
+    <state width="1877" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575138820182" />
+    <state width="1877" height="265" key="GridCell.Tab.0.center" timestamp="1575138820182">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="742" y="254" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575130551667" />
+    <state width="1877" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575138820182" />
+    <state width="1877" height="265" key="GridCell.Tab.0.left" timestamp="1575138820182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575138820182" />
+    <state width="1877" height="265" key="GridCell.Tab.0.right" timestamp="1575138820182">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575138820182" />
+    <state x="715" y="314" key="NewPhpClassDialog" timestamp="1575135523775">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="314" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575135523775" />
+    <state x="742" y="254" key="SettingsEditor" timestamp="1575156167189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="742" y="254" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575156167189" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1575138985864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1575138985864" />
     <state x="715" y="362" key="cloudConfig.PluginsDialog" timestamp="1575121362346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -315,13 +371,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575121449842" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1575132369748">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1575154224709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575132369748" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1575131764621">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575154224709" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1575198271615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575131764621" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575198271615" />
   </component>
 </project>

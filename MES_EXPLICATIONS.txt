@@ -4,6 +4,49 @@ CONVENTION :
      - MonController
      - MonEntity
 
+
+REQUIRE :
+    composer:
+
+    - cocur/slugify
+    - fzaninotto/faker --dev
+    - orm-fixtures --dev
+    - encore
+
+    npm:
+
+    npm i --save-dev sass-loader node-sass postcss-loader autoprefixer
+
+
+    webpack.config.js :
+
+     .addEntry('js/global', './assets/js/global.js',)
+     .addEntry('js/ad', './assets/js/ad.js')
+     .addStyleEntry('css/global', './assets/css/global.scss')
+
+    .enableSassLoader()
+    .enablePostCssLoader()
+
+    jQuery :
+        .addLoader({
+            test: require.resolve('jquery'),
+            loader: 'expose-loader?jQuery!expose-loader?$'
+        })
+
+
+
+    postcss.config.js :
+
+
+    module.exports = {
+      plugins: {
+        'autoprefixer': {},
+      }
+    }
+
+
+
+
 Les CONTROLLERS :
 
     Pour créer un Controller il faut utiliser php /bin/console make:controller

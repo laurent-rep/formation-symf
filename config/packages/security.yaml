@@ -36,7 +36,7 @@ security:
                 login_path: admin_account_login
                 #La vérification pour voir si les infos sont bonnes
                 check_path: admin_account_login
-                default_target_path: admin_annonces_index
+                default_target_path: admin_dashboard
 
             logout:
                 path: admin_account_logout
