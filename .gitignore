@@ -2,10 +2,7 @@
 ###> symfony/framework-bundle ###
 .idea/
 .vs/
-.env
-.pk
-.pem
-.pub
+MES_EXPLICATIONS.txt
 /.env
 /.env.local
 /.env.local.php
